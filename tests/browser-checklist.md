@@ -1,5 +1,13 @@
 # Browser QA
 
+## Clickable category circles — 24 October 2026
+
+- Home and `#/check` each show five circles, as links to `#/c/vitamins`, `minerals`, `metals`, `electrolytes` and `essentials`.
+- **Mouse:** hovering a circle lifts it onto the 4 px ink block and shows its name underneath. Clicking Minerals opened the Minerals page.
+- **Keyboard:** focusing Essentials and pressing Enter opened the Essentials page.
+- **Phone width (375 px):** each tap target is 52 px, with no horizontal overflow.
+- No console errors. The pop-in and bob animation still runs on the inner disc.
+
 ## Ten new nutrients and the Essentials section — 23 October 2026
 
 Added folate, vitamin C, vitamin A (Vitamins); iodine, selenium (Minerals); copper (Metals); phosphorus (Electrolytes); and a new fifth section, Essentials (omega-3, choline, fibre). Tested in the in-app browser at 375 px.

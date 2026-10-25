@@ -531,7 +531,7 @@
     },
     "folate": {
       tagline: "The cell-building B vitamin.",
-      whatItIs: "Folate is a water-soluble B vitamin (B9). It occurs naturally in food; folic acid is the form added to fortified foods and supplements.",
+      whatItIs: "Vitamin B9, usually called folate, is a water-soluble B vitamin. Folate occurs naturally in food; folic acid is the form added to fortified foods and supplements.",
       keyFacts: [
         { label: "Daily reference", value: "400 mcg DFE" },
         { label: "Upper limit", value: "1,000 mcg folic acid" },

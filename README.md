@@ -38,7 +38,7 @@ tests/mock-account.js       In-memory account stand-in for UI testing (never pub
 tests/make-mock-page.js     Builds tests/mock.html from index.html with the stand-in
 data/config.js              Bands, affiliate threshold, delay and shared health copy
 data/categories.js          Category definitions
-data/vitamins.js            B12, D, B6, folate, vitamin C, vitamin A
+data/vitamins.js            B12, D, B6, B9 (folate), vitamin C, vitamin A
 data/minerals.js            Magnesium, calcium, iodine, selenium
 data/metals.js              Iron, zinc, copper
 data/electrolytes.js        Potassium, sodium, phosphorus
@@ -117,7 +117,7 @@ Chosen by the owner on 22 October 2026 from live demos (codes refer to those dem
 
 | Code | Where | What happens |
 | --- | --- | --- |
-| 1A | Home and check-in hub | The category circles pop in one after another, then bob gently. |
+| 1A | Home and check-in hub | The category circles pop in one after another, then bob gently. Since 24 October 2026 each circle is a link to its category: on hover or keyboard focus it lifts onto the ink block, its icon wiggles and its name appears underneath; a tap presses it in. Screen readers hear e.g. "Minerals: 4 check-ins". |
 | 2D | Category, nutrient, product, shop banner, Learn and key-fact cards | Cards grow in, in turn (70 ms apart, at most 8 steps). |
 | 3D | Quiz | The tapped answer tile wobbles like jelly; the next question appears after `advanceDelayMs` (420 ms) so the wobble can be seen. |
 | 4A | Result | The big number counts up while the ten meter segments fill one by one; the band label then stamps in. |
@@ -160,7 +160,7 @@ The owner asked for 2–4 more nutrients per section and a fifth section. There 
 
 | Section | Check-ins |
 | --- | --- |
-| Vitamins | B12, D, B6, **folate, vitamin C, vitamin A** |
+| Vitamins | B12, D, B6, **B9 (folate), vitamin C, vitamin A** |
 | Minerals | Magnesium, calcium, **iodine, selenium** |
 | Metals | Iron, zinc, **copper** |
 | Electrolytes | Potassium, sodium, **phosphorus** |

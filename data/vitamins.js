@@ -64,8 +64,8 @@
       { id: "b6-mood", text: "How often do you feel unusually low, irritable or confused?", scale: "often", topic: "Low mood or confusion", weight: 1, reverse: false, kind: "symptom" }
     ]
   }, {
-    id: "folate", name: "Folate", icon: "sprout", category: "vitamins",
-    summary: "Folate (vitamin B9) helps your body make DNA and healthy red blood cells.",
+    id: "folate", name: "Vitamin B9 (Folate)", icon: "sprout", category: "vitamins",
+    summary: "Vitamin B9 (folate) helps your body make DNA and healthy red blood cells.",
     foodSources: ["Leafy greens such as spinach", "Black-eyed peas (lobia) and other beans", "Lentils (dal)", "Asparagus and broccoli", "Folate-fortified cereals"],
     typicalIntake: "US RDA: 400 mcg DFE (dietary folate equivalents) per day for adults 19+.",
     cautionLevel: "high",

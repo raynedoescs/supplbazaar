@@ -15,7 +15,7 @@
       "zinc": [{ label: "Shop zinc on Amazon", url: "https://www.amazon.in/s?k=zinc+supplement&tag=YOUR-TAG-21" }],
       "potassium": [{ label: "Browse electrolyte drink mixes on Amazon", url: "https://www.amazon.in/s?k=electrolyte+drink+mix&tag=YOUR-TAG-21" }],
       "sodium": [{ label: "Browse electrolyte drink mixes on Amazon", url: "https://www.amazon.in/s?k=electrolyte+drink+mix&tag=YOUR-TAG-21" }],
-      "folate": [{ label: "Shop folate on Amazon", url: "https://www.amazon.in/s?k=folate+supplement&tag=YOUR-TAG-21" }],
+      "folate": [{ label: "Shop vitamin B9 (folate) on Amazon", url: "https://www.amazon.in/s?k=folate+supplement&tag=YOUR-TAG-21" }],
       "vitamin-c": [{ label: "Shop vitamin C on Amazon", url: "https://www.amazon.in/s?k=vitamin+c&tag=YOUR-TAG-21" }],
       "omega-3": [{ label: "Shop omega-3 on Amazon", url: "https://www.amazon.in/s?k=omega+3&tag=YOUR-TAG-21" }],
       "choline": [{ label: "Shop choline on Amazon", url: "https://www.amazon.in/s?k=choline+supplement&tag=YOUR-TAG-21" }],

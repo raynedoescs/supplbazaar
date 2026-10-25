@@ -208,7 +208,19 @@ summary { cursor: pointer; min-height: 48px; padding: 12px 0; font-weight: 650; 
 .category-card .card-top { margin-bottom: 12px; }
 .nutrient-card .card-top { margin-bottom: 0; }
 .hero-art { display: flex; margin-bottom: 20px; }
-.hero-art span { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; margin-right: -9px; border: 1.5px solid var(--ink); border-radius: 50%; background: var(--card-accent); color: var(--ink); }
+.hero-art .hero-dot { position: relative; display: block; width: 52px; height: 52px; margin-right: -9px; border-radius: 50%; color: var(--ink); text-decoration: none; -webkit-tap-highlight-color: transparent; }
+.hero-art .hero-disc { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; border: 1.5px solid var(--ink); border-radius: 50%; background: var(--card-accent); transition: box-shadow 150ms ease; }
+/* The name appears under a circle on hover or keyboard focus; screen readers always get it. */
+.hero-art .hero-name { position: absolute; top: calc(100% + 8px); left: 50%; z-index: 3; padding: 4px 9px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 12px; font-weight: 700; white-space: nowrap; pointer-events: none; opacity: 0; transform: translate(-50%, -4px); transition: opacity 140ms ease, transform 140ms ease; }
+.hero-art .hero-dot { transition: transform 150ms ease; }
+.hero-art .hero-dot:hover, .hero-art .hero-dot:focus-visible { z-index: 2; transform: translate(-3px, -3px); }
+.hero-art .hero-dot:hover .hero-disc, .hero-art .hero-dot:focus-visible .hero-disc { box-shadow: 4px 4px 0 var(--ink); }
+.hero-art .hero-dot:hover .hero-name, .hero-art .hero-dot:focus-visible .hero-name { opacity: 1; transform: translate(-50%, 0); }
+.hero-art .hero-dot:hover .icon, .hero-art .hero-dot:focus-visible .icon { animation: heroWiggle 420ms ease; }
+.hero-art .hero-dot:active { transform: scale(.9); }
+.hero-art .hero-dot:active .hero-disc { box-shadow: none; }
+.hero-art .hero-dot:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+@keyframes heroWiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-14deg); } 60% { transform: rotate(10deg); } }
 .hero-art .icon { width: 26px; height: 26px; stroke-width: 1.8; }
 .site-nav a { gap: 7px; }
 .site-nav .icon { width: 18px; height: 18px; }
@@ -400,7 +412,7 @@ summary { cursor: pointer; min-height: 48px; padding: 12px 0; font-weight: 650; 
 }
 /* Motion (owner-approved 22 October 2026). Everything below is switched off by prefers-reduced-motion. */
 /* 1A: hero icons pop in one after another, then bob gently */
-.hero-art span { animation: heroPop 500ms cubic-bezier(.3, 1.6, .5, 1) both, heroBob 2.4s ease-in-out infinite; animation-delay: calc(var(--enter, 0ms) + var(--i, 0) * 120ms), calc(var(--enter, 0ms) + 800ms + var(--i, 0) * 250ms); }
+.hero-art .hero-disc { animation: heroPop 500ms cubic-bezier(.3, 1.6, .5, 1) both, heroBob 2.4s ease-in-out infinite; animation-delay: calc(var(--enter, 0ms) + var(--i, 0) * 120ms), calc(var(--enter, 0ms) + 800ms + var(--i, 0) * 250ms); }
 @keyframes heroPop { 0% { transform: scale(0); } 70% { transform: scale(1.15); } 100% { transform: scale(1); } }
 @keyframes heroBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 /* 2D: cards grow in, in turn */

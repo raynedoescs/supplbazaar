@@ -260,9 +260,12 @@
     }).join("");
   }
   function heroArt() {
-    return '<div class="hero-art" aria-hidden="true">' + S.categories.slice().sort(function (a, b) { return a.order - b.order; }).map(function (c, i) {
-      return '<span style="--card-accent:' + escape(c.accent) + ';--i:' + i + '">' + icon(c.icon || "capsule") + '</span>';
-    }).join("") + '</div>';
+    // Each circle is a shortcut to its category's check-ins (owner request, 24 October 2026).
+    return '<nav class="hero-art" aria-label="Jump to a category">' + S.categories.slice().sort(function (a, b) { return a.order - b.order; }).map(function (c, i) {
+      var count = S.nutrients.filter(function (n) { return n.category === c.id; }).length;
+      return '<a class="hero-dot" href="#/c/' + escape(c.id) + '" style="--card-accent:' + escape(c.accent) + ';--i:' + i + '">' +
+        '<span class="hero-disc">' + icon(c.icon || "capsule") + '</span><span class="hero-name">' + escape(c.name) + '<span class="sr-only">: ' + count + ' check-ins</span></span></a>';
+    }).join("") + '</nav>';
   }
   function disclaimerNote() {
     return '<aside class="home-note"><p>Check-ins are for awareness, not a diagnosis. A questionnaire can’t measure your nutrient levels.</p><a class="text-link" href="#/about">' + icon("info") + 'How it works / disclaimer <span aria-hidden="true">↗</span></a></aside>';

@@ -299,16 +299,16 @@ Rebuilt 22 October 2026; About-you update 22 October 2026. All answers use 1–5
 | na-tired | How often do you feel unusually tired? | Never · Rarely · Sometimes · Often · Very often | symptom | 1 | Everyone | Tiredness |
 
 <!-- new-nutrients-2026-10-23 -->
-## Folate
+## Vitamin B9 (Folate)
 
 - **Added:** 23 October 2026 (owner approved more nutrients per section). Category: Vitamins.
-- **Role:** Folate (vitamin B9) helps your body make DNA and healthy red blood cells.
+- **Role:** Vitamin B9 (folate) helps your body make DNA and healthy red blood cells.
 - **Daily reference (verbatim):** US RDA: 400 mcg DFE (dietary folate equivalents) per day for adults 19+.
 - **Food sources (verbatim):** Leafy greens such as spinach; Black-eyed peas (lobia) and other beans; Lentils (dal); Asparagus and broccoli; Folate-fortified cereals.
 - **Caution level:** high.
 - **Upper-limit / caution note (verbatim):** US adult upper limit: 1,000 mcg a day of folic acid from supplements and fortified foods (natural food folate is not limited). High folic acid can hide the anaemia of low vitamin B12 while nerve damage continues. This limit is not a target.
 - **General guidance:** Low folate and low vitamin B12 cause the same kind of anaemia, so it is worth taking the B12 check too. Folate needs rise before and during pregnancy; anyone who could become pregnant should ask a clinician about folic acid.
-- **Shopping:** Amazon search link from 5/10: Shop folate on Amazon.
+- **Shopping:** Amazon search link from 5/10: Shop vitamin B9 (folate) on Amazon.
 - **Sources checked (23 October 2026):** [NIH ODS · Folate](https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/).
 
 ### Questions to review
