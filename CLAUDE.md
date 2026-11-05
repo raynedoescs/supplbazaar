@@ -149,7 +149,7 @@ Routes:
 - `#/c/<categoryId>`
 - `#/q/<nutrientId>`
 - `#/r/<nutrientId>`
-- `#/about`
+- `#/about` (About Supl since 5 November 2026; the old disclaimer page is now `#/how-it-works`; also `#/contact`, `#/terms`)
 
 Quiz sessions live inside the app closure. Only nutrient id and question position enter history state. Answers never enter URLs, history, logs or analytics. They leave the tab only when a signed-in user who has consented presses Save (POST to Supabase), and are briefly parked in sessionStorage only across a Google sign-in redirect started from a result. Other routes: `#/check`, `#/learn`, `#/learn/<nutrientId>`, `#/about-you[/<nutrientId>]`, `#/account[...]`, `#/privacy`. A quiz route without a profile redirects to About you first.
 

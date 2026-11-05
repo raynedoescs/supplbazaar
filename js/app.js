@@ -268,7 +268,7 @@
     }).join("") + '</nav>';
   }
   function disclaimerNote() {
-    return '<aside class="home-note"><p>Check-ins are for awareness, not a diagnosis. A questionnaire can’t measure your nutrient levels.</p><a class="text-link" href="#/about">' + icon("info") + 'How it works / disclaimer <span aria-hidden="true">↗</span></a></aside>';
+    return '<aside class="home-note"><p>Check-ins are for awareness, not a diagnosis. A questionnaire can’t measure your nutrient levels.</p><a class="text-link" href="#/how-it-works">' + icon("info") + 'How it works / disclaimer <span aria-hidden="true">↗</span></a></aside>';
   }
 
   // Home is shop-first: featured products, then the check-ins.
@@ -881,7 +881,7 @@
       '<h2 class="heading-icon">' + icon("retake") + 'Your rights.</h2><p>From your account page you can download your data, delete individual check-ins, withdraw consent (which deletes all saved check-ins and stops saving), and delete your account entirely. Deletion is immediate in our database; backups held by our provider expire on their normal schedule. You can also contact us to access, correct or erase your data, or to raise a grievance.</p>' +
       '<h2 class="heading-icon">' + icon("info") + 'Adults only.</h2><p>Accounts are for people aged 18 or older. Supl is an awareness tool, not a medical service, and your saved results are not medical records.</p>' +
       '<h2 class="heading-icon">' + icon("tag") + 'Shops and links.</h2><p>Shop links take you to other websites, such as Amazon, whose own privacy policies apply. We may earn a commission; we never send them your check-ins.</p>' +
-      '<p class="small-note">If this policy changes in a way that affects how your data is used, we will ask for your consent again.</p></article>', "Privacy policy", "Privacy policy");
+      '<p class="small-note">If this policy changes in a way that affects how your data is used, we will ask for your consent again.</p>' + trustLinks("#/privacy") + '</article>', "Privacy policy", "Privacy policy");
   }
 
   // ---- About you ----
@@ -1052,7 +1052,8 @@
       '<p class="small-note learn-note">' + escape(copy.safety) + ' Learning guides are general information, not medical advice.</p></article>', n.name + " guide", "Guide to " + n.name + ". " + L.tagline);
   }
 
-  function about() {
+  // How it works, disclaimer and editorial policy (was #/about until 5 November 2026).
+  function howItWorks() {
     setTheme(null);
     var sources = new Map();
     S.nutrients.forEach(function (n) { (n.sources || []).forEach(function (source) { sources.set(source.url, source); }); });
@@ -1065,8 +1066,65 @@
       '<h2 class="heading-icon">' + icon("lock") + 'Your answers, your choice.</h2><p>Without an account, answers live only in this tab’s memory and are cleared when you refresh or close it. With an optional account, a check-in is stored only when you choose Save and agree to it, and you can delete it at any time. There are no cookies, analytics, ads trackers or external font requests.</p><p>On a hosted site, your host receives normal page requests and may keep access logs; quiz answers are never included. If you follow an Amazon or reference link, that website’s privacy policy applies. <a href="#/privacy">Read the privacy policy</a>.</p>' +
       '<h2 class="heading-icon">' + icon("tag") + 'About shopping links.</h2><p>' + escape(S.affiliate.disclosure) + '</p><p>Optional links appear from a score of ' + S.config.affiliateMinScore + '. They do not establish a need for supplements or endorse any product. Supl does not check product quality or availability. Amazon may track activity after you choose to visit it.</p>' +
       '<h2 class="heading-icon">' + icon("bag") + 'About the shop.</h2><p>The Supl shop lists products with links to where you can buy them. Supl does not sell, test or ship products itself, and prices and availability are set by the seller. Product listings are not medical advice, and a check-in score never means you need to buy anything.</p>' +
-      '<h2 class="heading-icon">' + icon("book") + 'Where the content comes from.</h2><p>Public-health references inform the food and intake information. They do not endorse this quiz. Values are US NIH ODS references, with a WHO sodium guideline. Review against India’s ICMR-NIN guidance before launch.</p><ul class="reference-list">' + sourceLinks({ sources: Array.from(sources.values()) }) + '</ul>' +
-      '<p class="small-note">The category names are navigation groups. Iron, zinc, copper and the electrolytes are also minerals; each nutrient is listed once to keep browsing simple.</p><a class="button primary" href="#/check">' + label("grid", "Choose a category") + '<span aria-hidden="true">→</span></a></article>', "About and disclaimer", "About Supl and its limitations");
+      '<h2 class="heading-icon">' + icon("book") + 'How our content is written.</h2><p>Every check-in, result and Learn guide is written by Supl in plain language from public-health sources: the US National Institutes of Health Office of Dietary Supplements fact sheets, World Health Organization guidance (sodium and fibre) and MedlinePlus. Numbers such as daily references and upper limits are copied from those sources, and an automatic check stops the site from publishing if a number on a result page and its Learn guide disagree. The sources do not endorse Supl.</p>' +
+      '<p><b>Review status:</b> the content has not yet been independently reviewed by a clinician, and the reference values are US/WHO figures that have not yet been compared with India’s ICMR-NIN guidance. Both reviews are planned before Supl promotes its check-ins widely.</p>' +
+      '<p><b>Commercial independence:</b> scores and questions are never changed to sell products. Shopping links never appear below ' + S.config.affiliateMinScore + '/10, and never for nutrients where testing should come first.</p>' +
+      '<p><b>Corrections:</b> if you spot a mistake, email ' + ownerMail() + '. Last updated ' + escape(S.config.pagesUpdated) + '.</p><p>Sources used:</p><ul class="reference-list">' + sourceLinks({ sources: Array.from(sources.values()) }) + '</ul>' +
+      '<p class="small-note">The category names are navigation groups. Iron, zinc, copper and the electrolytes are also minerals; each nutrient is listed once to keep browsing simple.</p><a class="button primary" href="#/check">' + label("grid", "Choose a category") + '<span aria-hidden="true">→</span></a>' + trustLinks("#/how-it-works") + '</article>', "How it works", "How Supl works and its limitations");
+  }
+
+  // ---- Trust pages (added 5 November 2026): About us, Contact, Terms of use ----
+  function ownerMail() {
+    var o = S.config.owner || {};
+    return o.email ? '<a href="mailto:' + escape(o.email) + '">' + escape(o.email) + '</a>' : "";
+  }
+  function trustLinks(current) {
+    var links = [["#/about", "info", "About Supl"], ["#/how-it-works", "chart", "How it works"], ["#/contact", "mail", "Contact"], ["#/terms", "book", "Terms of use"], ["#/privacy", "lock", "Privacy policy"]];
+    return '<nav class="trust-links" aria-label="About Supl">' + links.filter(function (l) { return l[0] !== current; }).map(function (l) {
+      return '<a class="chip" href="' + l[0] + '">' + icon(l[1]) + escape(l[2]) + '</a>';
+    }).join("") + '</nav>';
+  }
+  function aboutUs() {
+    setTheme(null);
+    var o = S.config.owner || {};
+    show(backLink("#/", "Home") + '<article class="about"><p class="eyebrow">About Supl</p><h1 id="screen-title" tabindex="-1">Supplements,<br>made clearer.</h1>' +
+      '<p class="lead">Supl is a supplement shop with free, private check-ins and plain-language guides, built so that people in India can understand nutrients before they buy anything.</p>' +
+      '<h2 class="heading-icon">' + icon("user") + 'Why Supl exists.</h2><blockquote class="founder-quote"><p>“' + escape(o.story || "") + '”</p><footer>' + escape(o.name || "") + ', founder</footer></blockquote>' +
+      '<p>Supl was started by ' + escape(o.name || "") + ' in ' + escape(o.city || "") + '. Many people buy supplements without knowing whether they need them, while others never find out that a nutrient deserves a conversation with their doctor. Supl tries to close that gap with honest information and no pressure to buy.</p>' +
+      '<h2 class="heading-icon">' + icon("check") + 'What we do.</h2><p><b>Check-ins:</b> ten quick questions about one nutrient give a 1–10 score and a clear next step. Your answers stay on your device unless you choose to save them. <b>Learn:</b> plain-language guides to ' + S.nutrients.length + ' nutrients, from what each one does to the foods that provide it. <b>Shop:</b> products listed with links to where you can buy them.</p>' +
+      '<h2 class="heading-icon">' + icon("stethoscope") + 'What we are not.</h2><p>Supl is not a medical service and does not diagnose anything. A check-in can help you decide what to ask a clinician; only a clinician and, where needed, a blood test can tell you about your own levels.</p>' +
+      '<h2 class="heading-icon">' + icon("leaf") + 'Our promises.</h2><p>Food comes first. Scores are never changed to sell products. Sources are always shown. Your answers are yours. <a href="#/how-it-works">How Supl works and how our content is written</a>.</p>' +
+      trustLinks("#/about") + '</article>', "About Supl", "About Supl. Why Supl exists and who runs it.");
+  }
+  function contact() {
+    setTheme(null);
+    var o = S.config.owner || {};
+    show(backLink("#/", "Home") + '<article class="about"><p class="eyebrow">Contact</p><h1 id="screen-title" tabindex="-1">Say hello.</h1>' +
+      '<p class="lead">Questions, feedback, corrections or partnership ideas: we read every message.</p>' +
+      (o.email ? '<a class="button primary" href="mailto:' + escape(o.email) + '">' + label("mail", "Email " + escape(o.email)) + '<span aria-hidden="true">→</span></a>' : '') +
+      '<h2 class="heading-icon">' + icon("user") + 'Who you are writing to.</h2><p>' + escape(o.name || "") + ', founder of Supl, ' + escape(o.city || "") + '. We aim to reply within a few working days.</p>' +
+      '<h2 class="heading-icon">' + icon("lock") + 'Privacy requests and grievances.</h2><p>To access, correct or delete your data, or to raise a privacy grievance, email ' + ownerMail() + ' with “Privacy” in the subject. See the <a href="#/privacy">privacy policy</a>.</p>' +
+      '<h2 class="heading-icon">' + icon("stethoscope") + 'Medical questions.</h2><p>We cannot give personal medical advice by email. Please speak to a doctor about your own health. <b>In an emergency, call 112.</b> For mental-health support, Tele-MANAS is free on 14416.</p>' +
+      '<h2 class="heading-icon">' + icon("bag") + 'Orders and products.</h2><p>Supl does not sell or ship products itself. For an order, delivery or refund, contact the shop where you bought it, for example Amazon.</p>' +
+      trustLinks("#/contact") + '</article>', "Contact", "Contact Supl");
+  }
+  function terms() {
+    setTheme(null);
+    var o = S.config.owner || {};
+    var sec = function (ic, head, body) { return '<h2 class="heading-icon">' + icon(ic) + escape(head) + '</h2>' + body; };
+    show(backLink("#/", "Home") + '<article class="about"><p class="eyebrow">Terms of use · last updated ' + escape(S.config.pagesUpdated) + '</p><h1 id="screen-title" tabindex="-1">Terms of use.</h1>' +
+      '<p class="lead">By using Supl you agree to these terms. Please read them with the <a href="#/privacy">privacy policy</a>.</p>' +
+      sec("user", "1. Who we are.", '<p>Supl (this website) is run by ' + escape(o.name || "") + ', ' + escape(o.city || "") + '. Contact: ' + ownerMail() + '.</p>') +
+      sec("stethoscope", "2. Not medical advice.", '<p>Supl provides general information and screening check-ins for awareness only. It does not diagnose, treat or prevent any condition, and it is not a substitute for advice from a qualified doctor. Do not ignore or delay medical advice because of anything on Supl. If you are pregnant, breastfeeding, under 18, have a medical condition or take medication, speak to a doctor before taking any supplement. <b>In an emergency, call 112.</b></p>') +
+      sec("chart", "3. Check-in scores.", '<p>Check-in scores are based on your answers and editorial weights that have not been clinically validated. A score is not a measurement of your nutrient levels and not a probability. A low score does not rule out low levels, and a high score does not mean you need a supplement.</p>') +
+      sec("user", "4. Who can use Supl.", '<p>Supl is designed for adults aged 18 and over. If you create an account, keep your sign-in details safe and give accurate information. We may suspend accounts that misuse the service.</p>') +
+      sec("bag", "5. Shop, products and links.", '<p>Supl lists products and links to other websites, such as Amazon, where you can buy them. Supl does not sell, test, store or ship products. Prices, stock, delivery, returns and refunds are the responsibility of the seller, and that website’s own terms apply. Product information is provided by sellers or manufacturers; always read the label. ' + escape(S.affiliate.disclosure) + '</p>') +
+      sec("book", "6. Content and accuracy.", '<p>We work to keep content accurate and cite our sources, but health guidance changes and mistakes can happen. Content is provided “as is”. Please <a href="#/contact">tell us</a> about anything that looks wrong.</p>') +
+      sec("lock", "7. Your data.", '<p>How we handle your information is explained in the <a href="#/privacy">privacy policy</a>. Without an account, check-in answers are not stored.</p>') +
+      sec("leaf", "8. Our content.", '<p>The Supl name, design, text, questions and icons belong to Supl. You may share links to Supl and quote short passages with credit, but you may not copy the site or its check-ins for commercial use without permission.</p>') +
+      sec("info", "9. Liability.", '<p>To the extent permitted by law, Supl is not liable for any loss or harm arising from use of the site, from decisions made using its information, or from products bought on other websites. Nothing in these terms limits any rights you have under Indian consumer law.</p>') +
+      sec("retake", "10. Changes and law.", '<p>We may update these terms; the date above shows the latest version, and continued use means you accept the changes. These terms are governed by the laws of India, and the courts of New Delhi have jurisdiction.</p>') +
+      trustLinks("#/terms") + '</article>', "Terms of use", "Terms of use");
   }
 
   function render() {
@@ -1093,7 +1151,10 @@
     if (parts.length === 1 && parts[0] === "check") { checkHub(); return; }
     updateAccountNav();
     if (parts[0] !== "account") authNext = null;
-    if (parts.length === 1 && parts[0] === "about") { about(); return; }
+    if (parts.length === 1 && parts[0] === "about") { aboutUs(); return; }
+    if (parts.length === 1 && parts[0] === "how-it-works") { howItWorks(); return; }
+    if (parts.length === 1 && parts[0] === "contact") { contact(); return; }
+    if (parts.length === 1 && parts[0] === "terms") { terms(); return; }
     if (parts.length === 1 && parts[0] === "privacy") { privacy(); return; }
     if (parts[0] === "learn") {
       if (parts.length === 1) { learnList(); return; }

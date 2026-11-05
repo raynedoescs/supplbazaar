@@ -1,5 +1,12 @@
 # Browser QA
 
+## Trust pages — 5 November 2026
+
+- `#/about`, `#/how-it-works`, `#/contact`, `#/terms` and `#/privacy` all render with the correct titles and owner details, and no placeholder text remains.
+- Each page shows links to the other four, and the footer reads About · Contact · Terms · Privacy.
+- At 375 px there is no horizontal overflow; the footer tagline wraps onto its own line.
+- No console errors.
+
 ## Clickable category circles — 24 October 2026
 
 - Home and `#/check` each show five circles, as links to `#/c/vitamins`, `minerals`, `metals`, `electrolytes` and `essentials`.

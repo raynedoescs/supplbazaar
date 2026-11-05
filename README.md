@@ -176,6 +176,13 @@ Decisions:
 - No new nutrient uses `ageWeight` or sex-specific questions; all men and women see the same ten.
 - New icons: sprout, citrus, carrot, wave, nut, coin, bone, softgel, egg, grain.
 
+## Trust pages and publishing (5 November 2026)
+
+- **New pages:** `#/about` (About Supl, with the founder's story), `#/contact`, `#/terms` (Terms of use) and `#/how-it-works`. The last one is the old About/disclaimer page plus an editorial policy covering how content is written, its review status, commercial independence and corrections. The footer now links About · Contact · Terms · Privacy.
+- **Owner details** live in `data/config.js` → `owner` (name, email, city, story) and `pagesUpdated`. The privacy page reads `privacyOwner` / `privacyContact` in `data/backend.js`; both are now filled in (Rayaan Faiz, rayaanfaiz11@gmail.com).
+- **Not legal advice:** the Terms of use are a plain-language draft. Have a lawyer review them, together with the privacy policy, before accounts or paid services launch.
+- **Publishing:** `.github/workflows/static.yml` now copies only `index.html`, `css/`, `js/`, `data/` and `images/` into `_site` and publishes that folder. Tests, `tests/mock.html`, `backend/`, `README.md`, `CLAUDE.md` and `MEDICAL-REVIEW.md` stay in the repository but are no longer served on the website.
+
 ## How to add a nutrient
 
 1. Copy one complete nutrient object inside a loaded `data/*.js` file's `S.nutrients.push(...)` list. Keep commas between objects.

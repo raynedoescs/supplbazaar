@@ -10,7 +10,7 @@
     // Bump this date when the wording of the consent box or privacy policy changes materially.
     consentVersion: "2026-10-22",
     // Shown on the privacy page. Required before accounts go live.
-    privacyOwner: "",         // your name or business name
-    privacyContact: ""        // an email address for privacy and grievance requests
+    privacyOwner: "Rayaan Faiz",              // your name or business name
+    privacyContact: "rayaanfaiz11@gmail.com"  // an email address for privacy and grievance requests
   };
 }(window.SUPL));

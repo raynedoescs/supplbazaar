@@ -34,6 +34,16 @@
       variety: ["Very varied", "Varied", "Somewhat", "Limited", "Very limited"],
       donate: ["Never", "Under once a year", "Once a year", "2–3 a year", "4+ a year"]
     },
+    // OWNER: who runs Supl. Shown on About, Contact, Terms and (via data/backend.js) Privacy.
+    owner: {
+      name: "Rayaan Faiz",
+      email: "rayaanfaiz11@gmail.com",
+      city: "New Delhi",
+      // In the owner's own words (5 November 2026).
+      story: "My father was always passionate about health and nutrition, and he is my inspiration."
+    },
+    // Date shown on the Terms of use and How it works pages. Update it when you change either page.
+    pagesUpdated: "5 November 2026",
     copy: {
       tagline: "Quick supplement risk check.",
       disclaimer: "For awareness only. Not a diagnosis or medical advice.",

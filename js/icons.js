@@ -30,6 +30,7 @@
     crystal: '<path d="M8 3.5h8l4 5.5-8 11.5L4 9l4-5.5z"/><path d="M4 9h16"/><path d="M10 9l2 11.5L14 9l-2-5.5L10 9z"/>',
     ingot: '<path d="M2.5 19l3-7.5h13l3 7.5h-19z"/><path d="M6.5 11.5L8.5 6h7l2 5.5"/>',
     drop: '<path d="M12 3c3.6 4.6 6 8 6 11a6 6 0 0 1-12 0c0-3 2.4-6.4 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/>',
     // Nutrients added 23 October 2026
     sprout: '<path d="M12 21v-9"/><path d="M12 12C12 8 9.5 5.5 5 5.5c0 4.5 2.5 6.5 7 6.5z"/><path d="M12 14c0-3.5 2.2-6 6.5-6 0 4-2.4 6-6.5 6z"/><path d="M8 21h8"/>',
     citrus: '<circle cx="12" cy="12" r="8.5"/><path d="M12 5.5v13M6.4 8.8l11.2 6.4M6.4 15.2l11.2-6.4"/>',
