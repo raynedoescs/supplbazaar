@@ -367,6 +367,7 @@ summary { cursor: pointer; min-height: 48px; padding: 12px 0; font-weight: 650; 
 .fact b { font-size: 15px; line-height: 1.3; }
 .learn-jump { position: sticky; top: 0; z-index: 5; display: flex; gap: 8px; margin-top: 10px; padding: 12px 0; overflow-x: auto; background: var(--tint); scrollbar-width: none; }
 .learn-jump::-webkit-scrollbar { display: none; }
+a.jump { display: inline-flex; align-items: center; text-decoration: none; }
 .jump { flex: 0 0 auto; min-height: 42px; padding: 0 15px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: 13px; font-weight: 700; }
 .learn-section { margin-top: 14px; padding: 22px; border: 1px solid var(--line); border-radius: 26px; background: #fff; scroll-margin-top: 66px; }
 .learn-section h2 { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-family: inherit; font-size: 20px; font-weight: 850; letter-spacing: -.4px; line-height: 1.25; }

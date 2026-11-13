@@ -34,6 +34,9 @@
       variety: ["Very varied", "Varied", "Somewhat", "Limited", "Very limited"],
       donate: ["Never", "Under once a year", "Once a year", "2–3 a year", "4+ a year"]
     },
+    // The site's public address, ending in /. Used for the search pages, sitemap and link previews.
+    // Change it if you move to your own domain, then run: node tools/build-pages.js
+    siteUrl: "https://raynedoescs.github.io/supplbazaar/",
     // OWNER: who runs Supl. Shown on About, Contact, Terms and (via data/backend.js) Privacy.
     owner: {
       name: "Rayaan Faiz",

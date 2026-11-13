@@ -39,7 +39,8 @@ jobs:
         run: |
           mkdir _site
           cp index.html _site/
-          cp -r css js data images _site/
+          cp -r css js data images learn _site/
+          cp sitemap.xml robots.txt _site/
           rm -f _site/images/products/README.txt
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
