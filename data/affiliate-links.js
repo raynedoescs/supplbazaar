@@ -11,7 +11,6 @@
       "vitamin-b6": [{ label: "Shop vitamin B6 on Amazon", url: "https://www.amazon.in/s?k=vitamin+b6&tag=YOUR-TAG-21" }],
       "magnesium": [{ label: "Shop magnesium on Amazon", url: "https://www.amazon.in/s?k=magnesium&tag=YOUR-TAG-21" }],
       "calcium": [{ label: "Shop calcium on Amazon", url: "https://www.amazon.in/s?k=calcium&tag=YOUR-TAG-21" }],
-      "iron": [{ label: "Shop iron on Amazon", url: "https://www.amazon.in/s?k=iron+supplement&tag=YOUR-TAG-21" }],
       "zinc": [{ label: "Shop zinc on Amazon", url: "https://www.amazon.in/s?k=zinc+supplement&tag=YOUR-TAG-21" }],
       "potassium": [{ label: "Browse electrolyte drink mixes on Amazon", url: "https://www.amazon.in/s?k=electrolyte+drink+mix&tag=YOUR-TAG-21" }],
       "sodium": [{ label: "Browse electrolyte drink mixes on Amazon", url: "https://www.amazon.in/s?k=electrolyte+drink+mix&tag=YOUR-TAG-21" }],
